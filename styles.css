@@ -1,0 +1,177 @@
+header {
+    position: relative; /* Necesario para el z-index */
+    overflow: hidden; /* Evita que la imagen de fondo se desborde */
+}
+.header-content {
+    position: relative;
+    z-index: 2;
+    padding: 50px 20px;
+}
+
+
+
+.custom-header-bg {
+    background: url('img/portadaa.jpeg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white; /* Asegura que el texto sea blanco */
+    position: relative;
+}
+
+
+.custom-header-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Oscurece un poco el fondo */
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+.h1 {
+    color: #00FFFF; /* Cian brillante para destacar */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.p1 {
+    color: #FFFFFF; /* Mantiene el blanco con sombra */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+
+
+/* Estilo del Navbar */
+.custom-navbar {
+    background: rgba(20, 20, 20, 0.8); /* Fondo oscuro con transparencia */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    padding: 15px 0;
+}
+
+/* Estilos del texto */
+.custom-navbar .navbar-brand {
+    color: #00FFFF; /* Cian futurista */
+    font-weight: bold;
+    font-size: 22px;
+    transition: color 0.3s ease-in-out;
+}
+
+.custom-navbar .navbar-brand:hover {
+    color: #FF4C4C; /* Rojo neón al pasar el cursor */
+}
+
+/* Estilos de los enlaces */
+.custom-navbar .nav-link {
+    color: #FFFFFF;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #00FFFF; 
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+
+
+
+
+
+.text-overlay {
+    color: #FFFFFF; /* O el color que elijas */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Sombra negra difuminada */
+}
+
+.social-icons a i {
+    font-size: 2.5em; /* Ajusta el tamaño según sea necesario */
+    margin: 0 15px; /* Ajusta el margen entre los iconos */
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+}
+
+.social-icons a i:hover {
+    transform: scale(1.2); /* Agranda el icono al pasar el mouse */
+}
+
+
+
+
+
+.hobbies-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.hobby-category {
+    text-align: center;
+}
+
+.hobby-category h4 {
+    margin-bottom: 20px;
+}
+
+.hobby-image {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+}
+
+/* Para categorías con 4 elementos (Videojuegos y Series) */
+#videojuegos > .hobby-image,
+#series > .hobby-image {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+    gap: 10px;
+}
+
+/* Para categorías con 2 elementos (Deporte y Música) */
+#deporte > .hobby-image,
+#musica > .hobby-image {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
+    gap: 10px;
+}
+
+.hobby-img {
+    width: 100%;  /* Las imágenes ocuparán todo el espacio de su contenedor */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;  /* Mantiene la proporción de la imagen */
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    #videojuegos > .hobby-image,
+    #series > .hobby-image {
+        grid-template-columns: repeat(2, 1fr); /* En pantallas pequeñas, las imágenes de videojuegos y series se distribuyen en 2 columnas */
+    }
+
+    #deporte > .hobby-image,
+    #musica > .hobby-image {
+        grid-template-columns: 1fr; /* En pantallas pequeñas, las imágenes de deporte y música se distribuyen en 1 columna */
+    }
+}
+
+@media (max-width: 576px) {
+    #videojuegos > .hobby-image,
+    #series > .hobby-image {
+        grid-template-columns: 1fr; /* En pantallas muy pequeñas, las imágenes de videojuegos y series se distribuyen en una sola columna */
+    }
+}
